@@ -59,6 +59,36 @@ under the License.
     <event type="service" invoke="createOfbizDemoByGroovyService"/>
     <response name="success" type="view" value="main"/>
 </request-map>
+
+
+<!-- Serviecs for the event -->
+<request-map uri="createOfbizDemoEvent">
+    <security https="true" auth="true"/>
+    <event type="java" path="com.ofbizdemo.events.OfbizDemoEvents" invoke="createOfbizDemoEvent"/>
+    <response name="success" type="view" value="main"/>
+    <response name="error" type="view" value="main"/>
+</request-map>
+
+<request-map uri="createOfbizDemoEventFtl">
+    <security https="true" auth="true"/>
+    <event type="java" path="com.ofbizdemo.events.OfbizDemoEvents" invoke="createOfbizDemoEvent"/>
+    <response name="success" type="view" value="main"/>
+    <response name="error" type="view" value="main"/>
+</request-map>
+
+
+
+<!-- Freemarker -->
+<!--Request Mapping-->
+<request-map uri="AddOfbizDemoFtl">
+    <security https="true" auth="true"/>
+    <response name="success" type="view" value="AddOfbizDemoFtl"/>
+</request-map>
+
+<!--View Mapping-->
+<view-map name="AddOfbizDemoFtl" type="screen" page="component://Ofbiztest/widget/OfbiztestScreens.xml#AddOfbizDemoFtl"/>
+
+
    
 <!-- View Mapping -->
 <view-map name="FindOfbizDemo" type="screen" page="component://Ofbiztest/widget/OfbiztestScreens.xml#FindOfbizDemo"/>
